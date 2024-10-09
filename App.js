@@ -9,18 +9,39 @@ import {
   Pressable,
   Modal,
   StatusBar,
-  ActivityIndicator
+  ActivityIndicator,
+  Alert,
 } from "react-native";
 
 export default function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   return (
     <View style={{ flex: 1, backgroundColor: "plum", padding: 60 }}>
-      <StatusBar backgroundColor="lightgreen" barStyle="light-content" hidden={isModalVisible}/>
-      <ActivityIndicator />
-      <ActivityIndicator size="large" />
-      <ActivityIndicator size="large" color="midnightblue"/>
-      <ActivityIndicator size="large" color="midnightblue" animating={isModalVisible}/>
+      <StatusBar
+        backgroundColor="lightgreen"
+        barStyle="light-content"
+        hidden={isModalVisible}
+      />
+      <Button title="Alert" onPress={() => Alert.alert("Invalid data!")} />
+      <Button
+        title="Alert 2"
+        onPress={() => Alert.alert("Invalid data!", "DOB incorrect")}
+      />
+      <Button
+        title="Alert 3"
+        onPress={() =>
+          Alert.alert("Invalid data!", "DOB incorrect", [
+            {
+              text: "Cancel",
+              onPress: () => console.log("Cancel pressed"),
+            },
+            {
+              text: "OK",
+              onPress: () => console.log("OK pressed")
+            }
+          ])
+        }
+      />
       <Button
         title="Press"
         onPress={() => setIsModalVisible(true)}
