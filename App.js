@@ -8,12 +8,14 @@ import {
   Button,
   Pressable,
   Modal,
+  StatusBar
 } from "react-native";
 
 export default function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   return (
     <View style={{ flex: 1, backgroundColor: "plum", padding: 60 }}>
+      <StatusBar backgroundColor="lightgreen" barStyle="light-content" hidden={isModalVisible}/>
       <Button
         title="Press"
         onPress={() => setIsModalVisible(true)}
