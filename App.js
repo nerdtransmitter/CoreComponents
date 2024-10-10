@@ -1,11 +1,15 @@
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View>
-        <Text>
-          Style inheritance
+      <StatusBar hidden/>
+      <View style={styles.darkMode}>
+        <Text style={styles.darkModeText}>
+          <Text style={styles.boldText}>
+            Style inheritance
+          </Text>
         </Text>
       </View>
       <View style={[styles.box, styles.lightblueBg, styles.boxShadow, styles.androidShadow]}>
@@ -20,6 +24,15 @@ export default function App() {
 
 const styles = StyleSheet.create ({
   container: { flex: 1, backgroundColor: "plum", padding: 60 },
+  darkMode: {
+    backgroundColor: "black",
+  },
+  darkModeText: {
+    color: "white",
+  },
+  boldText: {
+    fontWeight:"bold",
+  },
   box: {
     width: 250,
     height: 250,
