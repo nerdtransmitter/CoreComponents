@@ -4,7 +4,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={[styles.box, styles.lightblueBg]}>
-        <Text>Lightblue box</Text>
+        <Text style={{ borderRadius: 5, backgroundColor: "red" }}>Lightblue box</Text>
       </View>
       <View style={[styles.box, styles.lightgreenBg]}>
         <Text>Lightgreen box</Text>
@@ -18,7 +18,13 @@ const styles = StyleSheet.create ({
   box: {
     width: 100,
     height: 100,
-    padding: 10,
+    // padding: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 20,
+    marginVertical: 10,
+    borderWidth: 2,
+    borderColor: "purple",
+    borderRadius: 5,
   },
   lightblueBg: {
     backgroundColor: "lightblue",
